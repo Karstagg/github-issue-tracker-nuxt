@@ -1,12 +1,11 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <h1 class="title">
         github-issue-tracker-nuxt
       </h1>
       <h2 class="subtitle">
-        an app for tracking github issues
+        <search></search>
       </h2>
       <div class="links">
         <a
@@ -25,6 +24,13 @@
 </template>
 
 <script>
+  import search from "../components/search"
+  export default {
+    name: 'App',
+    components: {
+      search
+    }
+  }
 
 </script>
 
