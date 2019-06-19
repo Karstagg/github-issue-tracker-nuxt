@@ -1,33 +1,34 @@
 <template>
   <div class="container">
     <div v-for="issue in issues">
-      {{issue}}
+
     </div>
   </div>
 </template>
 
 <script>
+  import IssueCard from "../components/IssueCard"
   export default {
-
+    components: { IssueCard },
     computed: {
-      issues() {
+      issues () {
         return this.$store.state.issues
       }
     },
     methods: {
-      addIssues(data) {
+      addIssues (data) {
         this.$store.commit('addIssues', data)
       },
-      async search(submitEvent) {
-        let query = submitEvent.srcElement[0].value
+      async search (submitEvent) {
+        let query = submitEvent.srcElement[0].value;
         let result = await this.$axios.$get('https://api.github.com/search/issues?q=' + query)
-        let storeIt = await this.addIssues(result)
+        let storeIt = await this.addIssues(result);
         $nuxt.$router.push(
           { name: 'issues' }
         )
       }
     },
-    created: function() {
+    created: function(){
 
       console.log(this.issues)
 
@@ -37,14 +38,14 @@
 
 </script>
 
-<style lang="sass">
-  .container
-    margin: 0 auto
-    min-height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
-    text-align: center
-
+<style lang="scss">
+  .container {
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 
 </style>

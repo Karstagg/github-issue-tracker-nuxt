@@ -1,9 +1,18 @@
 <template>
-  <div class="issueCard">
+  <div class="card-body">
 
   </div>
 </template>
+<script >
+ export default {
 
-<style>
+ }
+</script>
 
-</style>
+ <style lang="scss">
+  .card-body {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  }
+ </style>

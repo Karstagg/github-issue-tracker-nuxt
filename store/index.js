@@ -1,9 +1,15 @@
 export const state = () => ({
-  issues: []
+  issues: null
 })
 
 export const mutations = {
+
   addIssues (state, newIssues) {
-    state.issues.push(newIssues)
+    console.log(state.issues, "isssss")
+    if (state.issues === null) {
+      state.issues = newIssues
+    } else {
+     state.issues = state.issues.concat(newIssues)
+    }
   }
 }
