@@ -13,6 +13,7 @@
   .card-body {
     width: 100px;
     height: 100px;
-    background-color: red;
+    background-color: white;
+    border: solid 1px black
   }
  </style>

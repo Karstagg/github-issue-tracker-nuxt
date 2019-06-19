@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div >
     <div v-for="issue in issues">
-
+      <issue-card></issue-card>
     </div>
   </div>
 </template>
@@ -42,7 +42,6 @@
   .container {
     margin: 0 auto;
     min-height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
