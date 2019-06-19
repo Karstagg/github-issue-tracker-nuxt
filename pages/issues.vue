@@ -1,7 +1,7 @@
 <template>
-  <div >
+  <div class="grid" >
     <div v-for="issue in issues">
-      <issue-card></issue-card>
+      <issue-card :issue ="issue"></issue-card>
     </div>
   </div>
 </template>
@@ -39,12 +39,11 @@
 </script>
 
 <style lang="scss">
-  .container {
-    margin: 0 auto;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
   }
 
 </style>
