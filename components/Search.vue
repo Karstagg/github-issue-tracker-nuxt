@@ -20,7 +20,7 @@
       },
       async search (submitEvent) {
         let query = submitEvent.srcElement[0].value;
-        let result = await this.$axios.$get('https://api.github.com/search/issues?q=' + query)
+        let result = await this.$axios.$get('https://api.github.com/search/issues?q=' + query + '&per_page=50')
         console.log(result.items, "res")
         let storeIt = await this.addIssues(result.items);
         $nuxt.$router.push(

@@ -27,8 +27,7 @@
    .card-header {
      width: 100%;
      height: 50px;
-     background-color: white;
-     border-bottom: solid 1px black
+     background-color: #3f51b5
    }
    .card-body {
      width: 100%;
@@ -39,6 +38,6 @@
      width: 100%;
      height: 50px;
      background-color: white;
-     border-top: solid 1px black
+
    }
  </style>
