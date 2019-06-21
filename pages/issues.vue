@@ -1,9 +1,11 @@
 <template>
   <div>
     <Header></Header>
-    <div class="grid">
-      <div v-for="issue in issues">
-        <issue-card :issue="issue"></issue-card>
+    <div class="grid-container">
+      <div class="grid">
+        <div v-for="issue in issues">
+          <issue-card :issue="issue"></issue-card>
+        </div>
       </div>
     </div>
   </div>
@@ -64,8 +66,16 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-gap: 50px;
     grid-auto-rows: minmax(100px, auto);
+    grid-row-gap: 50px;
+  }
+
+  .grid-container {
+    padding-top: 100px;
+    width: 90%;
+    padding-right: 5%;
+    padding-left: 5%;
   }
 
 </style>

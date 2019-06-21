@@ -7,18 +7,6 @@
       <h2 class="subtitle">
         <search></search>
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
     </div>
   </div>
 </template>
@@ -42,6 +30,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #E91E63;;
 }
 
 .title {
@@ -50,7 +39,7 @@
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
+  color: #ffffff;
   letter-spacing: 1px;
 }
 
