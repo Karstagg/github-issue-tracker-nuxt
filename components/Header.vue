@@ -3,7 +3,6 @@
     <div class="grid-containter">
       <div class="grid">
         <h1>Github Issue Tracker</h1>
-        <p class="link">placeholder</p>
       </div>
     </div>
   </div>

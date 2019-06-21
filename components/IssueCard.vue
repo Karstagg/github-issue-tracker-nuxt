@@ -10,10 +10,12 @@
       <h1 class="card-heading">{{issue.number}}</h1>
     </div>
     <div class="card-body">
-
+      <div class="card-contents">
+        {{issue.title}}
+      </div>
     </div>
-    <div class="card-footer">
-
+    <div class="card-footer footer-grid grid-containter">
+        <div v-for="label in issue.labels" class="card-label">{{label.name}}</div>
     </div>
   </div>
 </template>
@@ -54,6 +56,10 @@
      height: 200px;
      background-color: white;
    }
+   .card-contents {
+     width: 90%;
+     padding: 5% 5% 0 5%;
+   }
    .card-footer {
      width: 100%;
      height: 50px;
@@ -63,4 +69,22 @@
    .card-heading {
      margin-left: 10px;
    }
+   .card-label {
+     width: 100%;
+     height: 20px;
+     font-size: 9pt;
+     color: #ffffff;
+     background: #E91E63;
+     border-radius: 10%
+   }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+
+  .grid-containter {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
  </style>

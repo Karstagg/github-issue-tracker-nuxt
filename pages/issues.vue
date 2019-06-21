@@ -1,10 +1,21 @@
 <template>
   <div>
     <Header></Header>
+    <div class="toggle-grid-container">
+      <div class="toggle-grid">
+        <h3  v-on:click="filter = 'all'" v-bind:class="{active: filter === 'all'}" class="toggle-item">All</h3>
+        <h3 v-on:click="filter = 'open'" v-bind:class="{active: filter === 'open'}" class="toggle-item">Open</h3>
+        <h3 v-on:click="filter = 'closed'" v-bind:class="{active: filter === 'closed'}" class="toggle-item">Closed</h3>
+        <h3 v-on:click="filter = 'pull'" v-bind:class="{active: filter === 'pull'}" class="toggle-item">Pull</h3>
+      </div>
+    </div>
     <div class="grid-container">
       <div class="grid">
         <div v-for="issue in issues">
-          <issue-card :issue="issue"></issue-card>
+          <issue-card v-if="filter === 'all'" :issue="issue"></issue-card>
+          <issue-card v-else-if="filter === 'open' && issue.state === 'open'" :issue="issue"></issue-card>
+          <issue-card v-else-if="filter === 'closed'  && issue.state === 'closed'" :issue="issue"></issue-card>
+          <issue-card v-else-if="filter === 'pull' && issue.pull_request" :issue="issue"></issue-card>
         </div>
       </div>
     </div>
@@ -25,7 +36,8 @@
     data() {
       return {
         triggered: false,
-        page: 1
+        page: 1,
+        filter: "all"
       }
     },
     methods: {
@@ -51,6 +63,7 @@
       }
     },
     created: function() {
+      console.log(this.filter)
       window.addEventListener('scroll', this.handleScroll)
     },
     destroyed() {
@@ -76,6 +89,24 @@
     width: 90%;
     padding-right: 5%;
     padding-left: 5%;
+  }
+  .toggle-grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 10px;
+  }
+
+  .toggle-grid-container {
+    width: 30%;
+    margin-right: 65%;
+    margin-left: 5%;
+    padding-top: 100px;
+  }
+  .toggle-item {
+    cursor: pointer;
+  }
+  .active {
+    color: #E91E63;
   }
 
 </style>
